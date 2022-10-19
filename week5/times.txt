@@ -1,0 +1,6 @@
+to_csv: 5.65s
+to_hdf: 2.9s
+feather: 42.8ms
+parquet: 895ms
+
+(to_pickle: 167ms)
