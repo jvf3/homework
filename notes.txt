@@ -1,1 +1,4 @@
+<<<<<<< HEAD
 THIS IS THE BEST
+=======
+>>>>>>> parent of b82bb34 (a good change)
