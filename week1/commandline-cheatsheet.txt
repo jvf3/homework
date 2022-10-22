@@ -1,0 +1,39 @@
+#create directory temp/;
+mkdir temp
+
+#change working directory to temp/ (assuming temp/ exists);
+cd temp
+
+#write 'hello world' to file called hello.txt;
+echo hello world > hello.txt
+
+#list all files and folders in the parent folder of temp/;
+ls ..
+
+#list all currently processes running;
+ps aux
+
+#kill process with ID 666;
+kill -9 666
+
+#write the contents of environment variable $PATH to file path.txt;
+echo $PATH > path.txt
+
+#find file 'hello.txt' in the parent of the current directory;
+ls ../hello.txt
+
+#find all .png files in your home directory and subdirectories;
+find $HOME -type f -name '*.png'
+
+#find where the executable of command echo is located;
+whereis echo
+
+#find text 'Select all processes' in the manual of command ps (that is, in the output of command man ps);
+man ps |grep "Select all processes"
+
+#write the last 20 commands you've executed to file commands.txt.
+history -w /dev/stdout | tail -20 > commands.txt
+
+
+
+
