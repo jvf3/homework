@@ -1,0 +1,19 @@
+#Deriving the latest base image
+FROM python:latest
+
+
+#Labels as key value pair
+LABEL Maintainer="angeladu.me98"
+
+
+# Any working directory can be chosen as per choice like '/' or '/home' etc
+
+WORKDIR RESEARCH_PATH
+
+#to COPY the remote file at working directory in container
+COPY plotFromEnvironmentVar.py ./
+
+#CMD instruction should be used to run the software
+#contained by your image, along with any arguments.
+
+CMD [ "python", "./plotFromEnvironmentVar.py"]
