@@ -1,0 +1,2 @@
+set RESEARCH_PATH=C:\Users\angel\OneDrive\Desktop\MQF\Fall 2022\Digital Tools\duangel\homework\data
+echo %RESEARCH_PATH%
