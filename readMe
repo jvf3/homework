@@ -10,6 +10,7 @@ With the rise of cryptocurrencies, can we apply the same fx hedging methods? Or 
 Data:
 The data of historical financial time series of traditional asset classes will be obtained using Bloomberg. The data for cryptocurrencies will be obtained using the API of one of the major cryptocurrency exchanges.
 
+
 Mohammad Charagh Alam
 Angela Du
 Julian Fischer
