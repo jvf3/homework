@@ -11,6 +11,8 @@ import numpy as np
 from scipy.stats import pearsonr
 import datetime 
 from pandas.tseries.offsets import BDay
+import matplotlib.pyplot as plt
+from statsmodels.tsa.stattools import grangercausalitytests
 
 path = r"C:\Users\angel\Final--crypto\data"
 
@@ -22,6 +24,9 @@ def loadData(path):
     vixPrices = pd.read_excel(path + '\VIX.xlsx')
     cryptoPrices = pd.read_excel(path + '\crypto-prices.xlsx')
     cryptoPrices['Dates'] = pd.to_datetime(cryptoPrices['Dates'])
+    
+    cryptoPrices.columns = ['Dates', 'BTC', 'ETH', 'XRP', 'XLM']
+    
     
     return equityPrices, bondPrices, cmdtyPrices, vixPrices, cryptoPrices
 
@@ -75,8 +80,32 @@ def calcDailyReturn(price):
 def getCorr(df1,df2):
     corr, _ = pearsonr(df1, df2)
     return corr
+
+def plotHeatMap(df):
+    lab = df.columns[1:]
+    fig, ax = plt.subplots()
+    im = ax.imshow(df)
     
-#def plotRelationship(df1,df2):
+    # Show all ticks and label them with the respective list entries
+    ax.set_xticks(np.arange(len(lab)), labels=lab)
+    ax.set_yticks(np.arange(len(lab)), labels=lab)
+    
+    # Rotate the tick labels and set their alignment.
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+             rotation_mode="anchor")
+    
+    # Loop over data dimensions and create text annotations.
+    for i in range(len(lab)):
+        for j in range(len(lab)):
+            text = ax.text(j, i, df[i, j],
+                           ha="center", va="center", color="w")
+    
+    ax.set_title("Correlation heatmap")
+    fig.tight_layout()
+    plt.show()
+    
+def smoothValues(df,windowLength):
+    return df.rolling(window = windowLength).mean().iloc[windowLength:,:]
 #%%
 assetNamesList = ['equity', 'bond', 'commodity', 'vix', 'crypto']
 equity, bond, cmdty, vix, crypto = loadData(path) 
@@ -90,3 +119,8 @@ for a in assetNamesList:
 
 mergedDailyRets = calcDailyReturn(mergedData.iloc[:,1:])
 mergedDailyRets.index = mergedData.Dates
+
+corrMat = mergedDailyRets.corr()
+
+smoothedDailyRets = smoothValues(mergedDailyRets, 7)
+smoothedDailyRets.plot()
