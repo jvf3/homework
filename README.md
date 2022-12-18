@@ -9,6 +9,8 @@ Project Organization
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
+    ├── citation.cff       <- Creates a citation tab for our repository.
+    ├── projectDescription <- Text file explaining our project.
     ├── data               <- Contains all the raw data that was obtained via Bloomberg and CoinMetrics
     │
     ├── notebooks          <- Jupyter notebook containing our code
@@ -16,7 +18,7 @@ Project Organization
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │   └── Digital Tools for Finance - Final Beamer Presentation        <- Beamer presentation
-    │   └── Digital Tools for Finance - Final Research Paper         <- Research Paper
+    │   └── Digital Tools for Finance - Final Research Paper             <- Research Paper
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
