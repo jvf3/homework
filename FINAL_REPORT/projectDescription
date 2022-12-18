@@ -1,0 +1,11 @@
+Research Proposal IT Skills for Research
+
+Intro:
+Inflation seems to be out of control. The national banks are trying to react with rate changes with the goal of taming an economy which is on the verge of disorder. Big movements of the (crypto)currency exchange rates are being observed. These movements are always two sided, since in theory, given there is no arbitrage, it’s a zero sum game considering all investors. The movements could of course be in one’s favour, however they bring uncertainty for sure; Uncertainty about the extent and direction of future fx rate movements. If executed correctly, currency hedging reduces risk and is vital for the long-term success of any company or individual dealing with different currencies.
+During such uncertain times as we're facing now, it is natural to spend more time thinking about hedging. In our project we want to examine different methods and hedging-pairs across cryptocurrencies, currencies (and equities and bonds) and analyse the impact on the return series. Furthermore, we want to determine whether there are certain periods where none of the analysed currencies serves as a sound hedge.
+
+Research project:
+With the rise of cryptocurrencies, can we apply the same fx hedging methods? Or is it even beneficial to combine traditional asset classes with (crypto)currencies?
+
+Data:
+The data of historical financial time series of traditional asset classes will be obtained using Bloomberg. The data for cryptocurrencies will be obtained using the API of one of the major cryptocurrency exchanges.

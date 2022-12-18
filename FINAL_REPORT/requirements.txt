@@ -1,0 +1,12 @@
+# local package
+-e .
+
+# external requirements
+pandas
+numpy
+scipy.stats
+seaborn  
+datetime 
+matplotlib.pyplot 
+plotly.graph_objects
+warnings
